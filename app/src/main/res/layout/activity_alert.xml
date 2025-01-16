@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Button for Terms & Conditions Alert -->
+    <Button
+        android:id="@+id/btn_alert_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Terms &amp; Conditions"
+        android:onClick="btnAlert1_Click"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button for Delete Confirmation Alert -->
+    <Button
+        android:id="@+id/btn_alert_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Delete Confirmation"
+        android:onClick="btnAlert2_Click"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button for Exit Confirmation Alert -->
+    <Button
+        android:id="@+id/btn_alert_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Exit Confirmation"
+        android:onClick="btnAlert3_Click"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

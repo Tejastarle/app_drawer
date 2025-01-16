@@ -1,22 +1,11 @@
 package org.tejas.appdrawer;
 
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.widget.Button;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnMail = findViewById(R.id.btn_mail);
         Button btnAppStore = findViewById(R.id.btn_appstore);
         Button btnCamera = findViewById(R.id.btn_camera);
+        Button btnAlert = findViewById(R.id.btn_alert); // New button for launching AlertActivity
 
         // Set button actions
         btnDial.setOnClickListener(v -> {
@@ -64,20 +54,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-//        btnMap.setOnClickListener(v -> {
-//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:16"));
-//
-//            startActivity(intent);
-//        });
         btnMap.setOnClickListener(v -> {
-            // Create an intent with the URL for searching hotels near the user
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:16.874834,74.262493?q=hotel"));
-
             startActivity(intent);
         });
-
-
-
 
         btnMail.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:example@gmail.com"));
@@ -93,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnCamera.setOnClickListener(v -> {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivity(intent);
+        });
+
+        // Launch AlertActivity
+        btnAlert.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, alert.class);
             startActivity(intent);
         });
     }
